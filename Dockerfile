@@ -1,18 +1,30 @@
 FROM alpine:latest
 
-Maintainer zanjs Manandhar <zanjs@gmail.com>
+Maintainer zanjs Manandhar <zanjser@163.com>
 
-RUN apk --update add wget \ 
-		     curl \
-		     git \
-		     php7 \
-		     php7-curl \
-		     php7-openssl \
-		     php7-iconv \
-		     php7-json \
-		     php7-mbstring \
-		     php7-phar \
-		     php7-dom --repository http://nl.alpinelinux.org/alpine/edge/testing/ && rm /var/cache/apk/*
+# Add PHP 7
+RUN apk upgrade -U && \
+    apk --update --repository=http://dl-4.alpinelinux.org/alpine/edge/testing add \
+    openssl \
+    php7 \
+    php7-xml \
+    php7-xsl \
+    php7-pdo \
+    php7-pdo_mysql \
+    php7-mcrypt \
+    php7-curl \
+    php7-json \
+    php7-fpm \
+    php7-phar \
+    php7-openssl \
+    php7-mysqli \
+    php7-ctype \
+    php7-opcache \
+    php7-mbstring \
+    php7-session \
+    php7-pdo_sqlite \
+    php7-sqlite3 \
+    php7-pcntl && rm /var/cache/apk/*
 
 RUN ln -s /usr/bin/php7 /usr/bin/php
 
