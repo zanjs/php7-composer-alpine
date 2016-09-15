@@ -1,6 +1,6 @@
-FROM alpine:3.3
+FROM alpine:latest
 
-Maintainer zanjs Manandhar <zanjser@163.com>
+Maintainer zanjs Manandhar <zanjs@gmail.com>
 
 RUN apk --update add wget \ 
 		     curl \
